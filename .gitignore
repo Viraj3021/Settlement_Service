@@ -1,4 +1,4 @@
-@node_modules/
+node_modules/
 dist/
 .env
 *.log
@@ -8,3 +8,4 @@ coverage/
 AI_USAGE.md
 CODE_WALKTHROUGH.md
 INTERVIEW_BUNDLE.md
+.claude/
