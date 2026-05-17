@@ -1,0 +1,29 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_PASSWORD: dev
+      POSTGRES_DB: settlements
+    ports: ["5432:5432"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 2s
+      retries: 10
+    volumes:
+      - ./apps/settlement/migrations:/docker-entrypoint-initdb.d:ro
+
+  payment-mock:
+    build: ./apps/payment-mock
+    ports: ["4000:4000"]
+
+  settlement:
+    build: ./apps/settlement
+    ports: ["3000:3000"]
+    environment:
+      DATABASE_URL: postgres://postgres:dev@postgres:5432/settlements
+      GATEWAY_URL: http://payment-mock:4000
+      PORT: "3000"
+      LOG_LEVEL: info
+    depends_on:
+      postgres: { condition: service_healthy }
+      payment-mock: { condition: service_started }

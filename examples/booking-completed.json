@@ -1,0 +1,12 @@
+{
+  "event": "BookingCompleted",
+  "bookingId": "bk_8f2a",
+  "userId": "user_123",
+  "scheduledEnd": "2026-04-10T18:00:00Z",
+  "actualEnd": "2026-04-10T19:30:00Z",
+  "includedUnits": 200,
+  "actualUnits": 237,
+  "baseFareCents": 8500,
+  "preAuthId": "auth_xyz",
+  "preAuthAmountCents": 50000
+}

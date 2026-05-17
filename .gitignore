@@ -1,0 +1,10 @@
+@node_modules/
+dist/
+.env
+*.log
+.DS_Store
+coverage/
+
+AI_USAGE.md
+CODE_WALKTHROUGH.md
+INTERVIEW_BUNDLE.md
