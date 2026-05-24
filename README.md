@@ -164,7 +164,6 @@ Covered:
 settlement-service/
 ├── docker-compose.yml          # one-command run: postgres + payment-mock + settlement
 ├── README.md
-├── AI_USAGE.md                 # how AI was used to build this
 ├── .env.example
 ├── examples/booking-completed.json
 ├── scripts/                    # smoke.ps1 / smoke.sh
